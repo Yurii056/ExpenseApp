@@ -2,7 +2,8 @@ const express = require("express");
 const fs = require("fs");
     
 const app = express();
-
+app.use(express.static(__dirname + "/public"));
+const jsonParser = express.json();
 
 // Create
 
@@ -116,6 +117,30 @@ banks: result.rows
 }
 });
 });
+
+ Possible API Methods: 
+ Bank: • createBank() – creates a new bank•
+ deleteBank() – deletes an existing bank • 
+ getBank() – retrieves information about a single bank • 
+ getAllBanks() – retrieves information about all banks • 
+ editBank() – edits an existing bank Transaction: •
+ createTransaction() – creates a new transaction • 
+ deleteTransaction() – deletes an existing transaction •
+ getAllTransactions() – retrieves information about all transactions • 
+ webhook() – sends a webhook when a transaction is created (optional API key authorization) 
+ 
+ Category: 
+ • createCategory() – creates a new category
+ • deleteCategory() – deletes an existing category 
+ • getCategory() – retrieves information about a single category
+ • getAllCategories() – retrieves information about all categories
+ • editCategory() – edits an existing category Statistics:
+ • getStatistics() – accepts category ids, from period, to period, and returns an object in the format { category name: balance }, for example: { food: -2500, salary: +12000, gasoline: -700 } 
+ Technical Requirements: • Node.js (framework is optional) • TypeScript • PostgreSQL
+
+
+
+
 
 
 
